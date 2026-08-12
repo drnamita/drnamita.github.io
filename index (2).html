@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Namita Mishra — Physician · Public Health · Data Science</title>
+<meta name="description" content="Dr. Namita Mishra — physician, public health professional, and health data scientist. Clinical medicine, research, teaching, and life beyond the clinic.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:        #12262a;
+    --ink-soft:   #24403f;
+    --paper:      #f1efe1;
+    --paper-dim:  #e7e3d1;
+    --card:       #fbfaf3;
+    --gold:       #c4872b;
+    --gold-dark:  #96631c;
+    --berry:      #8b3a42;
+    --teal:       #1f4e4a;
+    --line:       rgba(18,38,42,0.14);
+    --line-light: rgba(241,239,225,0.22);
+    --shadow:     0 20px 40px -24px rgba(18,38,42,0.35);
+    --serif: "Fraunces", Georgia, serif;
+    --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono:  "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  ::selection{background:var(--gold);color:var(--ink);}
+
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- eyebrow / mono labels ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-dark);
+    display:flex; align-items:center; gap:10px;
+    margin:0 0 14px 0;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold-dark);display:inline-block;}
+  .eyebrow.on-dark{color:#e7c88a;}
+  .eyebrow.on-dark::before{background:#e7c88a;}
+
+  /* ---------- top nav ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,239,225,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1160px;margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+  }
+  .nav-name{
+    font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:0.01em;
+    text-decoration:none;color:var(--ink);
+  }
+  .nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0;}
+  .nav-links a{
+    font-family:var(--mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+    text-decoration:none;color:var(--ink-soft);
+    padding-bottom:3px;border-bottom:1px solid transparent;
+  }
+  .nav-links a:hover{border-bottom-color:var(--gold);color:var(--ink);}
+  .nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:6px 10px;font-family:var(--mono);font-size:12px;color:var(--ink);}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; gap:0;
+      background:var(--paper); border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height .25s ease;
+    }
+    .nav-links.open{max-height:320px;}
+    .nav-links a{display:block;padding:14px 28px;border-bottom:1px solid var(--line);}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1100px 480px at 82% -10%, rgba(196,135,43,0.20), transparent 60%),
+      linear-gradient(180deg, var(--ink) 0%, #0e1e21 100%);
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+    padding:64px 0 0 0;
+  }
+  .hero-grid{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line-light) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-light) 1px, transparent 1px);
+    background-size:52px 52px;
+    opacity:0.35;
+    mask-image:linear-gradient(180deg, black, transparent 78%);
+  }
+  .hero-inner{position:relative;z-index:2;}
+
+  /* the journey thread — signature element */
+  .journey{
+    display:flex; flex-wrap:wrap; align-items:center; gap:0;
+    font-family:var(--mono); font-size:13px; letter-spacing:0.06em;
+    color:rgba(241,239,225,0.55);
+    margin-bottom:46px;
+  }
+  .journey span{padding:6px 0;}
+  .journey span.arrow{color:rgba(241,239,225,0.30); padding:0 10px;}
+  .journey span.stage{
+    color:rgba(241,239,225,0.55); text-transform:uppercase;
+    transition:color .3s ease;
+  }
+  .journey span.stage.active{color:#e7c88a; font-weight:600;}
+
+  .hero-main{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:end;
+    padding-bottom:56px;
+  }
+  .hero-name{
+    font-family:var(--serif); font-weight:600; font-size:clamp(40px,6vw,68px);
+    line-height:1.02; margin:0 0 18px 0; letter-spacing:-0.01em;
+  }
+  .hero-name em{font-style:italic; font-weight:500; color:#e7c88a;}
+  .hero-tagline{
+    font-family:var(--serif); font-style:italic; font-weight:500; font-size:20px;
+    color:rgba(241,239,225,0.82); margin:0 0 26px 0; max-width:46ch;
+  }
+  .hero-desc{
+    font-size:16.5px; color:rgba(241,239,225,0.72); max-width:52ch; margin:0 0 30px 0;
+  }
+  .hero-cta{display:flex; flex-wrap:wrap; gap:14px;}
+  .btn{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase;
+    text-decoration:none; padding:12px 20px; border-radius:3px; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-solid{background:var(--gold); color:var(--ink); font-weight:600;}
+  .btn-solid:hover{background:#d9973a;}
+  .btn-ghost{border:1px solid rgba(241,239,225,0.35); color:var(--paper);}
+  .btn-ghost:hover{border-color:#e7c88a; color:#e7c88a;}
+
+  .hero-portrait{
+    justify-self:end; width:100%; max-width:340px;
+    border-radius:4px; overflow:hidden; border:1px solid rgba(241,239,225,0.18);
+    box-shadow:var(--shadow);
+    position:relative;
+  }
+  .hero-portrait img{aspect-ratio:4/5; object-fit:cover; width:100%;}
+  .hero-portrait figcaption{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase;
+    padding:10px 14px; color:rgba(241,239,225,0.55); background:rgba(0,0,0,0.15);
+  }
+
+  @media (max-width:820px){
+    .hero-main{grid-template-columns:1fr; gap:36px;}
+    .hero-portrait{justify-self:start; max-width:240px;}
+  }
+
+  /* ---------- section shell ---------- */
+  section{padding:96px 0;}
+  section.alt{background:var(--paper-dim);}
+  .section-head{max-width:680px; margin-bottom:52px;}
+  .section-title{
+    font-family:var(--serif); font-weight:600; font-size:clamp(28px,3.6vw,40px);
+    margin:0; line-height:1.1; letter-spacing:-0.01em;
+  }
+  .section-title em{font-style:italic; color:var(--gold-dark); font-weight:500;}
+  .section-sub{margin:14px 0 0 0; color:var(--ink-soft); font-size:16.5px; max-width:60ch;}
+
+  /* ---------- about ---------- */
+  .about-layout{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;}
+  .about-lede{
+    font-family:var(--serif); font-size:22px; line-height:1.5; font-weight:500;
+    margin:0 0 22px 0; color:var(--ink);
+  }
+  .about-body p{margin:0 0 16px 0; color:var(--ink-soft); font-size:15.5px;}
+  .stat-rail{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:32px;}
+  .stat{
+    background:var(--card); border:1px solid var(--line); border-radius:6px; padding:18px 20px;
+  }
+  .stat b{display:block; font-family:var(--serif); font-size:26px; color:var(--teal); font-weight:600;}
+  .stat span{font-size:12.5px; color:var(--ink-soft); font-family:var(--mono); letter-spacing:0.02em;}
+
+  details.more{margin-top:28px; border-top:1px solid var(--line); padding-top:18px;}
+  details.more summary{
+    cursor:pointer; font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--gold-dark); font-weight:600; list-style:none;
+  }
+  details.more summary::-webkit-details-marker{display:none;}
+  details.more summary::before{content:"+ "; }
+  details.more[open] summary::before{content:"– ";}
+  details.more .more-body{margin-top:18px;}
+  details.more .more-body p{color:var(--ink-soft); font-size:15px; margin:0 0 15px 0;}
+
+  /* ---------- experience timeline ---------- */
+  .timeline{position:relative; padding-left:32px; border-left:1px solid var(--line);}
+  .t-item{position:relative; padding-bottom:38px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:""; position:absolute; left:-37.5px; top:4px; width:11px; height:11px;
+    border-radius:50%; background:var(--paper); border:2px solid var(--gold);
+  }
+  .t-year{font-family:var(--mono); font-size:12px; letter-spacing:0.06em; color:var(--gold-dark); font-weight:600; text-transform:uppercase;}
+  .t-role{font-family:var(--serif); font-size:19px; font-weight:600; margin:6px 0 2px 0;}
+  .t-org{font-size:14px; color:var(--ink-soft); margin:0 0 10px 0;}
+  .t-desc{font-size:14.5px; color:var(--ink-soft); margin:0; max-width:62ch;}
+
+  /* ---------- credentials / publications ---------- */
+  .cred-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
+  .cred-col h3{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--berry); font-weight:600; margin:0 0 18px 0; padding-bottom:10px; border-bottom:1px solid var(--line);
+  }
+  .cred-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px;}
+  .cred-col li{font-size:14.5px; color:var(--ink-soft); line-height:1.5;}
+  .cred-col li b{color:var(--ink); font-weight:600; display:block; font-family:var(--serif); font-size:15.5px; margin-bottom:2px;}
+  @media (max-width:900px){.cred-grid{grid-template-columns:1fr; gap:32px;}}
+
+  /* ---------- research ---------- */
+  .card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .rcard{
+    background:var(--card); border:1px solid var(--line); border-radius:8px; padding:26px;
+    display:flex; flex-direction:column; gap:14px; text-decoration:none; color:var(--ink);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .rcard:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:var(--gold);}
+  .rcard .tag{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--berry); font-weight:600;
+  }
+  .rcard h3{font-family:var(--serif); font-size:19px; margin:0; font-weight:600; line-height:1.3;}
+  .rcard p{margin:0; font-size:14px; color:var(--ink-soft); flex-grow:1;}
+  .rcard .go{font-family:var(--mono); font-size:12px; color:var(--gold-dark); font-weight:600;}
+  @media (max-width:900px){.card-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:620px){.card-grid{grid-template-columns:1fr;}}
+
+  /* ---------- teaching ---------- */
+  .teach-layout{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .quote-block{
+    background:var(--ink); color:var(--paper); border-radius:8px; padding:40px 36px;
+    position:relative;
+  }
+  .quote-block::before{
+    content:"“"; font-family:var(--serif); font-size:80px; color:var(--gold);
+    position:absolute; top:6px; left:24px; opacity:0.5; line-height:1;
+  }
+  .quote-block p{
+    font-family:var(--serif); font-style:italic; font-size:19px; line-height:1.55;
+    margin:20px 0 18px 0; position:relative; z-index:1;
+  }
+  .quote-block span{font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:#e7c88a;}
+  .inst-list{list-style:none; margin:22px 0 0 0; padding:0; display:flex; flex-direction:column; gap:14px;}
+  .inst-list li{
+    display:flex; gap:14px; align-items:baseline; border-bottom:1px solid var(--line); padding-bottom:14px;
+  }
+  .inst-list b{font-family:var(--serif); font-size:17px; min-width:34px; color:var(--gold-dark);}
+  .inst-list div span{display:block; font-size:12.5px; color:var(--ink-soft); font-family:var(--mono); margin-top:2px;}
+
+  /* ---------- beyond the clinic ---------- */
+  .beyond-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .bcard{background:var(--card); border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+  .bcard .img{aspect-ratio:4/3; overflow:hidden;}
+  .bcard .img img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .bcard:hover .img img{transform:scale(1.06);}
+  .bcard .body{padding:20px 22px 24px;}
+  .bcard .tag{font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); font-weight:600;}
+  .bcard h3{font-family:var(--serif); font-size:20px; margin:10px 0 8px 0;}
+  .bcard p{font-size:14.5px; color:var(--ink-soft); margin:0 0 14px 0;}
+  .bcard a{font-family:var(--mono); font-size:12px; color:var(--gold-dark); text-decoration:none; font-weight:600;}
+  @media (max-width:900px){.beyond-grid{grid-template-columns:1fr;}}
+
+  .strip{
+    margin-top:34px; display:grid; grid-template-columns:repeat(6,1fr); gap:10px;
+  }
+  .strip img{aspect-ratio:1; object-fit:cover; border-radius:5px; border:1px solid var(--line);}
+  @media (max-width:760px){.strip{grid-template-columns:repeat(3,1fr);}}
+
+  /* ---------- footer / contact ---------- */
+  footer{
+    background:var(--ink); color:var(--paper); padding:76px 0 40px;
+  }
+  .footer-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:start;}
+  .footer-title{font-family:var(--serif); font-size:clamp(30px,4vw,44px); margin:0 0 16px 0; font-weight:600;}
+  .footer-title em{color:#e7c88a; font-style:italic; font-weight:500;}
+  .footer-desc{color:rgba(241,239,225,0.68); max-width:48ch; margin:0 0 28px 0;}
+  .contact-row{display:flex; flex-wrap:wrap; gap:14px;}
+  .foot-links{display:flex; flex-direction:column; gap:12px;}
+  .foot-links a{
+    text-decoration:none; color:var(--paper); font-family:var(--mono); font-size:13.5px;
+    letter-spacing:0.04em; border-bottom:1px solid rgba(241,239,225,0.2); padding-bottom:10px;
+    display:flex; justify-content:space-between;
+  }
+  .foot-links a span{color:rgba(241,239,225,0.45);}
+  .foot-bottom{
+    margin-top:60px; padding-top:24px; border-top:1px solid rgba(241,239,225,0.15);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-family:var(--mono); font-size:11.5px; color:rgba(241,239,225,0.45);
+  }
+  @media (max-width:760px){.footer-grid{grid-template-columns:1fr;}}
+
+  .fade-up{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .fade-up.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Namita Mishra</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Healer</a></li>
+      <li><a href="#experience">Learner</a></li>
+      <li><a href="#research">Analyst</a></li>
+      <li><a href="#teaching">Teacher</a></li>
+      <li><a href="#publications">Credentials</a></li>
+      <li><a href="#beyond">Creator</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="journey" id="journeyThread">
+      <span class="stage" data-stage="human">human</span><span class="arrow">→</span>
+      <span class="stage" data-stage="healer">healer</span><span class="arrow">→</span>
+      <span class="stage" data-stage="learner">learner</span><span class="arrow">→</span>
+      <span class="stage" data-stage="analyst">analyst</span><span class="arrow">→</span>
+      <span class="stage" data-stage="teacher">teacher</span><span class="arrow">→</span>
+      <span class="stage" data-stage="creator">creator</span>
+    </div>
+
+    <div class="hero-main">
+      <div>
+        <h1 class="hero-name">Dr. Namita<br><em>Mishra</em></h1>
+        <p class="hero-tagline">Physician-trained, public-health-shaped, data-driven — twenty years of patient care distilled into a search for better evidence.</p>
+        <p class="hero-desc">I've spent two decades in clinical medicine and public health, and I'm now applying that ground-level experience to health analytics — using data to understand disease patterns, health inequities, and what actually moves outcomes.</p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="mailto:dr.namita9670@gmail.com">Email Me →</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/dr-namita-mishra-466b0999/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/drnamita" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <figure class="hero-portrait">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUb_ZNHs3m4Q6u7dCforhbp-iEK5nIOQGK5tBwRkBYCiYzyohEkHDT8YISSBJfk5wQftpk-ha00oGFoODoQlSH5-B5pyiY2g2XZ67FC9yenW7RiLZTSNF9CvhmQp4tPLQHM98yx4NVa6OdDoJQTq6ZteRyIr8ZLct0cxkCQquXiNPi6VD7LcF_eHmGNiPkD72CZPjeLvH3Bj3iJePoUGTcvZcg7x_OZdTwIh3hVXCE=w1280" alt="Portrait of Dr. Namita Mishra" loading="eager">
+        <figcaption>Mother of two · Pensacola, FL</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <p class="eyebrow">01 · Healer &amp; Learner</p>
+      <h2 class="section-title">A continuum, not a <em>straight line.</em></h2>
+      <p class="section-sub">Medicine, public health, and data science aren't three separate careers — they're one line of inquiry, followed wherever it led.</p>
+    </div>
+
+    <div class="about-layout fade-up">
+      <div>
+        <p class="about-lede">I began as a physician, trained for clinical excellence and service — but the patients I treated kept pointing me toward questions medicine alone couldn't answer.</p>
+        <div class="stat-rail">
+          <div class="stat"><b>20+ yrs</b><span>Clinical practice — emergency, ENT, GI &amp; general medicine</span></div>
+          <div class="stat"><b>MPH → MS</b><span>Public Health, then Data Science (Health Analytics)</span></div>
+        </div>
+      </div>
+      <div class="about-body">
+        <p>More than two decades of clinical work — across emergency care, otorhinolaryngology, gastroenterology, and general practice — gave me a close view of what patients actually face: delayed prevention, limited access, socioeconomic barriers, and gaps in health information that no prescription can fix.</p>
+        <p>That observation pulled me from treating individuals toward understanding populations. A Master of Public Health took me into community health initiatives, chronic disease programs, and surveillance-informed decision-making — and showed me how directly good data shapes policy and outcomes, especially in resource-limited settings.</p>
+        <p>As my interests sharpened around cancer epidemiology, chronic disease, and health equity, I realized I needed a new set of tools — so I added a Master of Science in Data Science (Health Analytics) to the foundation, working with large datasets like NHANES, the Jackson Heart Study, and the All of Us Research Program, and building fluency in R, SAS, Python, SQL, and GIS.</p>
+        <details class="more">
+          <summary>Read the fuller journey</summary>
+          <div class="more-body">
+            <p>My path has also crossed countries and health systems. Navigating extended transitions as a single working mother during my spouse's doctoral training in the United States built a resilience and cultural perspective that never interrupted my academic growth — if anything, it deepened my understanding of health disparities and sharpened my commitment to academic medicine and public health.</p>
+            <p>Today my data science work stays grounded in clinical and public-health relevance. I don't see analytics as a purely computational exercise — it's a way to identify risk patterns, sharpen prevention strategies, and make evidence legible to researchers, policymakers, and communities alike. My current research centers on cancer epidemiology: the intersection of chronic disease, metabolic risk, mental health, and health inequities, including work with breast cancer cohorts from the All of Us Research Program.</p>
+            <p>I'm now looking for an academic home where clinical experience, public health training, and data science expertise are valued together — through teaching, collaborative research, mentorship, and service, ideally at an institution committed to health equity and evidence-driven care.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <p class="eyebrow">02 · Learner</p>
+      <h2 class="section-title">Two decades, <em>five roles.</em></h2>
+      <p class="section-sub">A working history that moves from bedside to population data — clinical care, public health fieldwork, and now research support at UWF.</p>
+    </div>
+
+    <div class="timeline fade-up">
+      <div class="t-item">
+        <span class="t-year">2025 — Present</span>
+        <h3 class="t-role">Project Coordinator</h3>
+        <p class="t-org">Usha Kundu College of Health, University of West Florida</p>
+        <p class="t-desc">Leads community health events including 3D mobile mammography, collects and analyzes screening data, and develops outreach materials.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-year">2023 — Present</span>
+        <h3 class="t-role">Project Support Specialist</h3>
+        <p class="t-org">University of West Florida</p>
+        <p class="t-desc">Supports HRSA-funded research — designing IRB protocols and Qualtrics surveys, cleaning and analyzing data, and presenting findings at public health conferences.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-year">2022 — 2023</span>
+        <h3 class="t-role">Clinical Researcher</h3>
+        <p class="t-org">Baptist Health Care, Florida</p>
+        <p class="t-desc">Collaborated on a non-randomized clinical trial of 502 patients with cardiac implants and atrial fibrillation — managing IRB, EHR data collection and cleaning, and co-authoring a poster presented at the Heart Rhythm Society, 2023.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-year">2019 — Present</span>
+        <h3 class="t-role">Adjunct Instructor</h3>
+        <p class="t-org">University of West Florida</p>
+        <p class="t-desc">Teaches Human Physiology &amp; Pharmacology to classes of 30–100 students, designing assessments, projects, and data-based health research assignments.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-year">2018</span>
+        <h3 class="t-role">Public Health Graduate Intern</h3>
+        <p class="t-org">Florida Department of Health, Escambia County</p>
+        <p class="t-desc">Served as Principal Investigator on two community-based surveys assessing food access and the neighborhood food environment — from IRB drafting through GIS-based visualization and manuscript development.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-year">2007 — 2010</span>
+        <h3 class="t-role">Otorhinolaryngology Clinical Research Resident (DNB)</h3>
+        <p class="t-org">Jawaharlal Nehru Hospital Research Center, India</p>
+        <p class="t-desc">Principal Investigator on a prospective study of salivary gland tumors, managing regulatory compliance and statistical analysis while running high-volume outpatient clinics (~60 patients/day) and ~16 inpatient procedures a week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="alt">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <p class="eyebrow">03 · Analyst</p>
+      <h2 class="section-title">All about numbers — <em>and what they mean.</em></h2>
+      <p class="section-sub">A running set of research and analytics projects spanning clinical data, public health, and geographic health patterns. Each links out to the full write-up.</p>
+    </div>
+
+    <div class="card-grid fade-up">
+      <a class="rcard" href="https://sites.google.com/view/namitamishra/research-projects/electrophysiology-ep-project" target="_blank" rel="noopener">
+        <span class="tag">Clinical · Cardiology</span>
+        <h3>Electrophysiology (EP) Project</h3>
+        <p>Analysis work centered on cardiac electrophysiology data and clinical decision-making.</p>
+        <span class="go">View project →</span>
+      </a>
+      <a class="rcard" href="https://sites.google.com/view/namitamishra/research-projects/public-health-research-project" target="_blank" rel="noopener">
+        <span class="tag">Public Health</span>
+        <h3>Public Health Research Project</h3>
+        <p>Community-level public health research applying epidemiologic methods to real population data.</p>
+        <span class="go">View project →</span>
+      </a>
+      <a class="rcard" href="https://sites.google.com/view/namitamishra/research-projects/research-on-salivary-gland-tumors" target="_blank" rel="noopener">
+        <span class="tag">Oncology</span>
+        <h3>Research on Salivary Gland Tumors</h3>
+        <p>Clinical research into salivary gland tumor presentation, patterns, and outcomes.</p>
+        <span class="go">View project →</span>
+      </a>
+      <a class="rcard" href="https://sites.google.com/view/namitamishra/research-projects/sql-data-manipulation" target="_blank" rel="noopener">
+        <span class="tag">Data Engineering</span>
+        <h3>SQL — Data Manipulation</h3>
+        <p>Structured querying and data-wrangling work applied to health datasets.</p>
+        <span class="go">View project →</span>
+      </a>
+      <a class="rcard" href="https://sites.google.com/view/namitamishra/research-projects/gis-projects" target="_blank" rel="noopener">
+        <span class="tag">Spatial Analysis</span>
+        <h3>GIS Projects</h3>
+        <p>Geographic visualization of food access, environmental factors, and community-level health disparities.</p>
+        <span class="go">View project →</span>
+      </a>
+      <a class="rcard" href="https://sites.google.com/view/namitamishra/research-projects/health-education-program-planning-and-evaluation-project" target="_blank" rel="noopener">
+        <span class="tag">Program Evaluation</span>
+        <h3>Health Education Program Planning &amp; Evaluation</h3>
+        <p>Planning and evaluating a health education program from design through outcomes.</p>
+        <span class="go">View project →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <p class="eyebrow">04 · Teacher</p>
+      <h2 class="section-title">Making the abstract <em>useful.</em></h2>
+      <p class="section-sub">Teaching and mentorship sit at the center of how I think about my work now — translating methods into tools students can actually use.</p>
+    </div>
+
+    <div class="teach-layout fade-up">
+      <div class="quote-block">
+        <p>My teaching emphasizes clarity, application, and inclusivity — helping students see how epidemiologic methods, statistical models, and health data translate into solutions for real-world health challenges.</p>
+        <span>— On teaching philosophy</span>
+      </div>
+      <div>
+        <ul class="inst-list">
+          <li>
+            <b>01</b>
+            <div>Adjunct Faculty
+              <span>University of West Florida — Public Health &amp; Health Sciences</span>
+            </div>
+          </li>
+          <li>
+            <b>02</b>
+            <div>Adjunct Faculty
+              <span>Pensacola State College — Analytics-related disciplines</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications" class="alt">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <p class="eyebrow">05 · Credentials</p>
+      <h2 class="section-title">Publications, <em>training &amp; degrees.</em></h2>
+      <p class="section-sub">The paper trail behind the work — peer-reviewed publications, conference posters, formal training, and academic degrees.</p>
+    </div>
+
+    <div class="cred-grid fade-up">
+      <div class="cred-col">
+        <h3>Publications &amp; Posters</h3>
+        <ul>
+          <li><b>Evaluation of Salivary Gland Tumors — A Prospective Study</b>Mishra N., Sharma N. · International Journal of Otorhinolaryngology (2021)</li>
+          <li><b>Molecular Mechanisms of Exercise-Induced Neuroprotection in Parkinson's Disease</b>Lee Y., Ju B., Cheon J., Mishra N., et al. · Sports Medicine &amp; Health Science (2025)</li>
+          <li><b>Training Needs of Community Health Workers</b>Poster, systematic review · APHA, Orlando (2024)</li>
+          <li><b>Oval Device Compression and Peri-Device Leaks after Watchman FLX Implantation</b>Poster · Heart Rhythm Society, New Orleans (2023)</li>
+          <li><b>Food Access in Escambia County, FL</b>NEMS-based community survey · manuscript in preparation (2026)</li>
+        </ul>
+      </div>
+      <div class="cred-col">
+        <h3>Education</h3>
+        <ul>
+          <li><b>M.S. Data Science</b>University of West Florida · December 2025</li>
+          <li><b>Data Science Certificate</b>University of West Florida · 2025</li>
+          <li><b>Master of Public Health</b>University of West Florida · 2018</li>
+          <li><b>DNB Otorhinolaryngology</b>National Board of Examination, India · 2007–2010</li>
+          <li><b>MBBS / MD</b>Mahatma Gandhi Medical College, India · 1995</li>
+        </ul>
+      </div>
+      <div class="cred-col">
+        <h3>Certificates &amp; Training</h3>
+        <ul>
+          <li><b>Data Science Certificate</b>University of West Florida (2025)</li>
+          <li><b>Protecting Human Research Participants</b>NIH (2017)</li>
+          <li><b>Social Behavioral Research</b>CITI Program (2025–2028)</li>
+          <li><b>Emergency Preparedness Training</b>FEMA &amp; WHO</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="beyond">
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <p class="eyebrow">06 · Creator</p>
+      <h2 class="section-title">Life outside the <em>clinic.</em></h2>
+      <p class="section-sub">Gardening, cooking, and sewing keep the same curiosity alive in a quieter register — creativity as a form of lifelong learning.</p>
+    </div>
+
+    <div class="beyond-grid fade-up">
+      <div class="bcard">
+        <div class="img"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXhNCj4i7UDTd_SlzLBOK1Q1jp8lVuIkFtKsSHByDDoUm8Dgcl42kT1wioFYJ7p3NeOGnPg21KddMN2U3nlh57dPppppGoRP3q3nv6i2fMNq2e9u0xgUNzLbF7cXlY8nSzRNv1zDHtPo6bCO1dgWa95xWQmf-NeaeANxNo2NtYpl4guIQG4PAER01PH_5gNspcrh6-BCTY_1LrhgeLLyHA0CCP4petgF6KEh_3xef8=w1280" alt="Chrysanthemum flowers from the garden" loading="lazy"></div>
+        <div class="body">
+          <span class="tag">Garden</span>
+          <h3>Relax &amp; Rejuvenate</h3>
+          <p>Azaleas, hibiscus, jasmine, and chrysanthemums alongside a working vegetable patch — tomatoes, turmeric, ridge gourd, and more, grown for the simple reward of fresh produce.</p>
+          <a href="https://sites.google.com/view/namitamishra/garden-projects" target="_blank" rel="noopener">See the garden →</a>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="img"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUXd7aM-376KavcA7ap7H0JOP2XlnuOLXubHzGK2ZsgusOv2Gqq1iWSW77PaZwn6-ItVrC23UqlQeI8ymRhMQtZ2jVyYpvjqV6eaMIRWai2B6ODYBGh1Rijt6XqW8FzOwMxjq7IEvo9GLgTfbre1RYZob3lF3xwln_pFClF7h2QbVpp06Igfuz5zyXXkPgBcFtnN80AryIn5SWpx0dcuud69kCw53n_BpETVyvRAPU=w1280" alt="Morning tea, culinary diary" loading="lazy"></div>
+        <div class="body">
+          <span class="tag">Culinary Diary</span>
+          <h3>Morning Starts With Tea</h3>
+          <p>A running log of what's on the table — from multigrain dosa and khaman dhokla to Indo-Chinese chilli paneer documented step by step.</p>
+          <a href="https://sites.google.com/view/namitamishra/culinary-diary" target="_blank" rel="noopener">Browse the diary →</a>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="img"><img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWhGeiXvtOzhrF-A0hVG4369X8NvaqwGcsuonvYg8xvzjWtVhfF75yhWAUgQj40NFsQeU293yN0kWPN-mHa-cMhIyOpBwpRzRPorA3GCfpJ5R86MQcVgAiA1JVCSGQdbC3fFlbYzfCsk0e7L21GcodsN799GhiLb8sySLHEDiTYMPZLxUKwS9suskUJVjTwEOokvqHM2pGJh_tkpkTjMvDpRYkr5PrLg910NEsGeME=w1280" alt="Sewing projects" loading="lazy"></div>
+        <div class="body">
+          <span class="tag">Sewing</span>
+          <h3>Sewing Projects</h3>
+          <p>Another quiet, hands-on outlet — small sewing projects made in between everything else.</p>
+          <a href="https://sites.google.com/view/namitamishra/sewing-projects" target="_blank" rel="noopener">See the projects →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip fade-up">
+      <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUFHRriDItaqWp8m3TQEmL3cWWB7BxbbKjIPUv4FMw4SUHXD8J2XlTwh7HbLmobDH7kg-3LxVsmQ8Eg4SoBLaTpS__R3lQ4CT3kLomt8PYU9N067ac6mqUXrjZxyxx1EbspuHQ76b4FmyV-6TmFDp4mXJglz7kOUmqqyE9kKcak9uczAMMIqzZ0DkMIX6p-DaPL8PK1sz_f4lh2CwirvtQn1Idj9hLPuj4hVSYw=w1280" alt="Fresh turmeric" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVDFHCMRXXmGV9icDidyIUkaWZ2R4pV8ADV8oGc3KHGtcnYrVaGMOdLQ780OgtTJK1ijTrNBYHGYoS7k7I8pqUOxGnfDK75XnoMPj1gaJWjsCMhmQ76loIyDMCTHpck7u_w8VSWDRhBsmSYAlUnbTe48-G-fX6oz8fdszpDblVPef4YnWssATJsVZtiVoCVNBGcr3muw-qwJLpfRtUVNTcZLwG1Pzl9MW9zc9rjkKI=w1280" alt="Cucumbers from the garden" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXTD3H8AlRK-gjKJSsH8UZl14xmzIqozZ2Hu8g1CeqMihnKmC01nfD2YTBPRWciFPX29Q_YEPvZ_VWxc1lw75KBb8ZNpgVu5yy8OC28sqb348iexlxkqF02fb2GKjVwqqKOOsawA-6dZfllmPW02F2M7Og_iOxtegtOcvWK0-QrR9KDqvokelrxHbsHneVryVWoDlBL_VjvrH9S84If_IM1jTrFsuY6iLWg_9hPDk8=w1280" alt="Indo-Chinese chowmin" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVBp946eQaFNvhTRk5BK05_GF0Gg0hzYR17dTmNgVYscpCt2M3JJe1tmt3K7PG2hT97v8JrtGR-Sp26vf0iix5VVN2NKJ9dvh8qeGI-3QwBc16nAvhtr-maIQyDQWWlq8RrVCCYIVgr6pM3Q1Mlydtotg_u37VAmU9UbCgHxfK4QAKuNb36F15YykFL8pUptg_gZ1QAaSftDE_APAq6Ecp21vIUL7gsNKG9ETIOYPU=w1280" alt="Scented gardenia" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWnQCsXWse5eMMJV-qlGW3-lu4fnOn8h8G3pwVFy77wju4ybI4Y9flfxLAxV8AYD8F63Ezf8Cl6LdwYtl3QSSColvT6FSHwhVVaOkrya7Z5iqdYwMI7KqQiK1E7orY1DCv87huFWcpODGKQ51rbP2Q7dwbuXgTZuMGddmggmLuGJ4h9uQq7nRXHBdGyeWRRFi1S3ZAfg5Bpr0wTtoTn5oUqalU4GxIprKirvDAXqCg=w1280" alt="Manchurian dish" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXsNpgU3nOChYBNeaV2llRdRcybst9uXPQqt_AgYEktXquBzKLyH9LsYrxj95qTD9iJIpu6Rxe-awiWgUw5VwerubjxKzLkrD2GV8vZ5yOV6_BJrIvqYxR-SF-4TBzOobZ-60geGpdC3OYm-5GrZWc03tSMnYlp1mkNMeokLBAa1_z92OdLcegAvp3amEDkf4i_FrOFsBFrXxDiE0RNAL9dE2JYLw8fLUFkJlDRcb8=w1280" alt="Roses and gerbera" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="eyebrow on-dark">Get in Touch</p>
+      <h2 class="footer-title">Let's <em>talk</em> — research, teaching, or collaboration.</h2>
+      <p class="footer-desc">I'm looking for academic and research opportunities at the intersection of medicine, public health, and data science. Reach out — I'd love to hear from you.</p>
+      <div class="contact-row">
+        <a class="btn btn-solid" href="mailto:dr.namita9670@gmail.com">dr.namita9670@gmail.com</a>
+      </div>
+    </div>
+    <div class="foot-links">
+      <a href="https://www.linkedin.com/in/dr-namita-mishra-466b0999/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+      <a href="https://github.com/drnamita" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+      <a href="mailto:dr.namita9670@gmail.com">Email <span>↗</span></a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Namita Mishra — human → healer → learner → analyst → teacher → creator</span>
+    <span>Pensacola, Florida</span>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // journey thread highlight tied to section in view
+  const stageMap = {about:'healer', experience:'learner', research:'analyst', teaching:'teacher', publications:'teacher', beyond:'creator'};
+  const stages = document.querySelectorAll('#journeyThread .stage');
+  const sections = Object.keys(stageMap).map(id => document.getElementById(id));
+  const setActive = (name) => {
+    stages.forEach(s => s.classList.toggle('active', s.dataset.stage === name));
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ setActive(stageMap[e.target.id]); }
+    });
+  }, {rootMargin:'-40% 0px -50% 0px'});
+  sections.forEach(s => s && io.observe(s));
+
+  // fade-up reveal
+  const fio = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); fio.unobserve(e.target); } });
+  }, {threshold:0.15});
+  document.querySelectorAll('.fade-up').forEach(el => fio.observe(el));
+</script>
+
+</body>
+</html>
