@@ -56,4 +56,4 @@ This work was followed by the use of large-scale secondary datasets, including N
 
 Together, these experiences have shaped a research approach that moves from data to action: identifying population health burdens, characterizing priority populations, conducting needs assessments, informing intervention and grant planning, and ultimately supporting implementation and evaluation of evidence-based health interventions
 
-This trajectory reflects my long-term goal of integrating clinical knowledge, epidemiology, data science, and public health methodology to generate actionable evidence for improving population health and reducing health disparities
+This trajectory reflects my long-term goal of integrating clinical knowledge, epidemiology, data science, and public health methodology to generate actionable evidence for improving population health and reducing health disparities. 
