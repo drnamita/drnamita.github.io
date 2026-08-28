@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +8,12 @@
 <title>Dr. Namita Mishra — Physician · Public Health · Data Science</title>
 
 <meta name="description"
-content="Dr. Namita Mishra — physician, public health professional, educator, researcher, and health data scientist exploring medicine, public health, data, and life beyond the clinic.">
+content="Dr. Namita Mishra — physician, public health professional, and health data scientist. Clinical medicine, research, teaching, and life beyond the clinic.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<!-- Corrected Google Fonts URL -->
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
 rel="stylesheet">
 
@@ -43,7 +44,6 @@ rel="stylesheet">
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:80px;
 }
 
 body{
@@ -142,7 +142,7 @@ a{
 
 .nav-links{
   display:flex;
-  gap:23px;
+  gap:26px;
   list-style:none;
   margin:0;
   padding:0;
@@ -150,14 +150,13 @@ a{
 
 .nav-links a{
   font-family:var(--mono);
-  font-size:11px;
-  letter-spacing:.07em;
+  font-size:12px;
+  letter-spacing:.08em;
   text-transform:uppercase;
   text-decoration:none;
   color:var(--ink-soft);
   padding-bottom:3px;
   border-bottom:1px solid transparent;
-  transition:.2s ease;
 }
 
 .nav-links a:hover{
@@ -219,6 +218,12 @@ a{
   opacity:.35;
 
   mask-image:linear-gradient(
+    180deg,
+    black,
+    transparent 78%
+  );
+
+  -webkit-mask-image:linear-gradient(
     180deg,
     black,
     transparent 78%
@@ -297,25 +302,15 @@ a{
 
 .hero-subtitle{
   max-width:680px;
-  font-size:20px;
-  color:rgba(241,239,225,.82);
+  font-size:19px;
+  color:rgba(241,239,225,.78);
   margin:0 0 26px;
 }
 
 .hero-description{
-  max-width:690px;
-  color:rgba(241,239,225,.68);
-  margin:0;
-  font-size:17px;
-}
-
-.hero-note{
-  margin-top:28px;
-  padding-left:18px;
-  border-left:2px solid var(--gold);
-  color:rgba(241,239,225,.62);
   max-width:650px;
-  font-size:14px;
+  color:rgba(241,239,225,.66);
+  margin:0;
 }
 
 /* =========================================
@@ -353,10 +348,6 @@ section{
   padding:82px 0;
 }
 
-section:nth-of-type(even){
-  background:rgba(231,227,209,.22);
-}
-
 .section-title{
   font-family:var(--serif);
   font-size:clamp(32px,4vw,48px);
@@ -365,10 +356,9 @@ section:nth-of-type(even){
 }
 
 .section-intro{
-  max-width:760px;
+  max-width:720px;
   color:var(--ink-soft);
   margin-bottom:45px;
-  font-size:17px;
 }
 
 /* =========================================
@@ -389,305 +379,8 @@ section:nth-of-type(even){
   margin-top:0;
 }
 
-.about-highlight{
-  margin-top:28px;
-  padding:22px 24px;
-  background:var(--card);
-  border-left:3px solid var(--gold);
-  border-radius:4px;
-  box-shadow:var(--shadow);
-}
-
-.about-highlight strong{
-  font-family:var(--serif);
-  font-size:20px;
-  font-weight:600;
-}
-
 /* =========================================
-   EXPERIENCE
-========================================= */
-
-.experience-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  margin-top:45px;
-}
-
-.experience-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:30px;
-  box-shadow:var(--shadow);
-}
-
-.experience-card .number{
-  font-family:var(--mono);
-  color:var(--gold-dark);
-  font-size:12px;
-  letter-spacing:.12em;
-  margin-bottom:14px;
-}
-
-.experience-card h3{
-  font-family:var(--serif);
-  font-size:27px;
-  line-height:1.15;
-  margin:0 0 13px;
-}
-
-.experience-card p{
-  color:var(--ink-soft);
-  margin:0;
-}
-
-.experience-card ul{
-  padding-left:20px;
-  margin:18px 0 0;
-  color:var(--ink-soft);
-}
-
-.experience-card li{
-  margin-bottom:8px;
-}
-
-/* =========================================
-   RESEARCH
-========================================= */
-
-.research-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:30px;
-  margin-top:45px;
-}
-
-.research-main,
-.research-side{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:30px;
-  box-shadow:var(--shadow);
-}
-
-.research-main h3,
-.research-side h3{
-  font-family:var(--serif);
-  font-size:27px;
-  margin:0 0 15px;
-}
-
-.research-main p,
-.research-side p{
-  color:var(--ink-soft);
-}
-
-.research-list{
-  list-style:none;
-  padding:0;
-  margin:25px 0 0;
-}
-
-.research-list li{
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-  color:var(--ink-soft);
-}
-
-.research-list li:last-child{
-  border-bottom:0;
-}
-
-.research-list strong{
-  color:var(--ink);
-}
-
-/* =========================================
-   TEACHING
-========================================= */
-
-.teaching-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  margin-top:45px;
-}
-
-.teaching-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:30px;
-  box-shadow:var(--shadow);
-}
-
-.teaching-card h3{
-  font-family:var(--serif);
-  font-size:27px;
-  margin:0 0 14px;
-}
-
-.teaching-card p{
-  color:var(--ink-soft);
-}
-
-.teaching-card ul{
-  padding-left:20px;
-  color:var(--ink-soft);
-}
-
-.teaching-philosophy{
-  margin-top:28px;
-  padding:24px;
-  background:var(--ink);
-  color:var(--paper);
-  border-radius:8px;
-}
-
-.teaching-philosophy h3{
-  font-family:var(--serif);
-  font-size:26px;
-  margin:0 0 10px;
-}
-
-.teaching-philosophy p{
-  margin:0;
-  color:rgba(241,239,225,.72);
-}
-
-/* =========================================
-   PUBLICATIONS
-========================================= */
-
-.publication-list{
-  margin-top:45px;
-  display:grid;
-  gap:18px;
-}
-
-.publication{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:25px 28px;
-  display:grid;
-  grid-template-columns:80px 1fr;
-  gap:24px;
-  box-shadow:var(--shadow);
-}
-
-.publication-number{
-  font-family:var(--mono);
-  color:var(--gold-dark);
-  font-size:12px;
-  letter-spacing:.1em;
-  padding-top:4px;
-}
-
-.publication h3{
-  font-family:var(--serif);
-  font-size:23px;
-  line-height:1.2;
-  margin:0 0 9px;
-}
-
-.publication p{
-  color:var(--ink-soft);
-  margin:0;
-}
-
-.publication-status{
-  display:inline-block;
-  margin-top:12px;
-  font-family:var(--mono);
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  font-size:10px;
-  color:var(--gold-dark);
-}
-
-/* =========================================
-   BLOG
-========================================= */
-
-.blog{
-  background:var(--paper);
-}
-
-.blog-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:26px;
-  margin-top:45px;
-}
-
-.blog-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:28px;
-  box-shadow:var(--shadow);
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease;
-}
-
-.blog-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 25px 45px -25px rgba(18,38,42,.45);
-}
-
-.blog-card .blog-date{
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--gold-dark);
-  margin-bottom:13px;
-}
-
-.blog-card h3{
-  font-family:var(--serif);
-  font-size:25px;
-  line-height:1.18;
-  margin:0 0 13px;
-}
-
-.blog-card p{
-  color:var(--ink-soft);
-  margin:0 0 18px;
-}
-
-.blog-card a{
-  font-family:var(--mono);
-  font-size:12px;
-  text-decoration:none;
-  color:var(--teal);
-  border-bottom:1px solid var(--gold);
-}
-
-.blog-card a:hover{
-  color:var(--gold-dark);
-}
-
-.blog-note{
-  margin-top:30px;
-  padding:25px;
-  border:1px solid var(--line);
-  background:var(--paper-dim);
-  border-radius:8px;
-}
-
-.blog-note p{
-  margin:0;
-  color:var(--ink-soft);
-}
-
-/* =========================================
-   BEYOND THE CLINIC
+   BEYOND / CARDS
 ========================================= */
 
 .beyond{
@@ -870,26 +563,20 @@ footer{
    MOBILE
 ========================================= */
 
-@media (max-width:1000px){
-
-  .nav-links{
-    gap:15px;
-  }
+@media (max-width:900px){
 
   .hero-main{
     grid-template-columns:1fr;
     gap:35px;
   }
 
-  .experience-grid,
-  .teaching-grid,
-  .research-grid{
-    grid-template-columns:1fr;
+  .beyond-grid{
+    grid-template-columns:1fr 1fr;
   }
 
-  .beyond-grid,
-  .blog-grid{
-    grid-template-columns:1fr 1fr;
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:30px;
   }
 
 }
@@ -916,7 +603,7 @@ footer{
   }
 
   .nav-links.open{
-    max-height:500px;
+    max-height:400px;
   }
 
   .nav-links a{
@@ -941,22 +628,12 @@ footer{
     padding:60px 0;
   }
 
-  .about-grid,
-  .experience-grid,
-  .research-grid,
-  .teaching-grid,
-  .beyond-grid,
-  .blog-grid{
+  .beyond-grid{
     grid-template-columns:1fr;
   }
 
   .bcard .img{
     height:220px;
-  }
-
-  .publication{
-    grid-template-columns:1fr;
-    gap:8px;
   }
 
   .foot-links{
@@ -1004,20 +681,37 @@ footer{
       class="nav-toggle"
       id="navToggle"
       aria-label="Open navigation"
-      aria-expanded="false">
+      aria-expanded="false"
+      type="button">
       MENU
     </button>
 
     <nav>
       <ul class="nav-links" id="navLinks">
 
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#beyond">Beyond</a></li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+          <a href="#research">Research</a>
+        </li>
+
+        <li>
+          <a href="#teaching">Teaching</a>
+        </li>
+
+        <li>
+          <a href="#publications">Publications</a>
+        </li>
+
+        <li>
+          <a href="#beyond">Beyond</a>
+        </li>
 
       </ul>
     </nav>
@@ -1097,14 +791,8 @@ footer{
 
         <p class="hero-description">
           A physician and public health professional exploring how
-          research, data, and human-centered thinking can help us
-          understand health, improve decisions, and ask better questions.
-        </p>
-
-        <p class="hero-note">
-          From the clinic to the classroom, from public health
-          practice to health analytics — a career built around
-          learning, teaching, and creating meaningful connections.
+          data, research, and human-centered thinking can improve
+          health and inform better decisions.
         </p>
 
       </div>
@@ -1137,55 +825,27 @@ footer{
         </h2>
 
         <p>
-          My professional journey began in clinical medicine and
-          gradually expanded into public health, education,
-          research, and health data science. Each chapter has
-          offered a different perspective on the same fundamental
-          question: how can we better understand health and improve
-          the lives of the people behind the numbers?
+          My journey has moved from clinical medicine to public
+          health, teaching, research, and health data science.
+          Each step has added another way of understanding health
+          and the people behind the numbers.
         </p>
-
-        <p>
-          Clinical medicine taught me to listen carefully to
-          individual patients. Public health broadened that view
-          to communities and populations. Data science has added
-          another layer — the ability to explore patterns,
-          quantify uncertainty, build models, and turn complex
-          information into evidence that can support better decisions.
-        </p>
-
-        <div class="about-highlight">
-          <strong>
-            Medicine gives me the questions. Data helps me explore them.
-          </strong>
-        </div>
 
       </div>
-
 
       <div class="fade-up">
 
         <p>
-          My current interests sit at the intersection of chronic
-          disease epidemiology, cancer research, health equity,
-          Bayesian and predictive modeling, public health
-          informatics, GIS, and precision public health.
+          I am especially interested in chronic disease
+          epidemiology, cancer research, health equity, Bayesian
+          modeling, predictive analytics, and precision public
+          health.
         </p>
 
         <p>
-          I am particularly interested in research that does not
-          treat data as an end in itself, but as a tool for
-          understanding people, populations, disparities, risk,
-          and opportunities for intervention.
-        </p>
-
-        <p>
-          Beyond professional and academic work, I enjoy the
+          Beyond academic and professional work, I enjoy the
           quieter parts of life — gardening, cooking, sewing,
-          learning new things, and creating things by hand.
-          These activities provide a different kind of creativity
-          and remind me that meaningful work and meaningful life
-          do not have to exist in separate worlds.
+          learning, and creating things by hand.
         </p>
 
       </div>
@@ -1214,120 +874,10 @@ footer{
     </h2>
 
     <p class="section-intro">
-      A multidisciplinary path combining more than two decades of
-      clinical experience with public health practice, teaching,
-      research, project coordination, and health analytics.
+      A multidisciplinary path combining clinical experience,
+      public health practice, education, research, and health
+      analytics.
     </p>
-
-
-    <div class="experience-grid">
-
-      <article class="experience-card fade-up">
-
-        <div class="number">
-          01 · CLINICAL MEDICINE
-        </div>
-
-        <h3>
-          The foundation: caring for patients
-        </h3>
-
-        <p>
-          My early professional experience was rooted in clinical
-          medicine. Working with patients taught me the importance
-          of careful observation, communication, clinical reasoning,
-          and seeing the person behind a diagnosis.
-        </p>
-
-        <ul>
-          <li>Medical training and clinical practice in India.</li>
-          <li>Experience across patient care and clinical settings.</li>
-          <li>A continuing interest in translating clinical questions into research questions.</li>
-        </ul>
-
-      </article>
-
-
-      <article class="experience-card fade-up">
-
-        <div class="number">
-          02 · PUBLIC HEALTH
-        </div>
-
-        <h3>
-          Looking beyond the individual
-        </h3>
-
-        <p>
-          Public health expanded my perspective from individual
-          patients to communities and populations. Graduate training
-          in public health strengthened my interest in prevention,
-          health disparities, community health, and evidence-based
-          interventions.
-        </p>
-
-        <ul>
-          <li>Community-based public health research.</li>
-          <li>Health equity and social determinants of health.</li>
-          <li>Food access and community resource assessment.</li>
-        </ul>
-
-      </article>
-
-
-      <article class="experience-card fade-up">
-
-        <div class="number">
-          03 · TEACHING & RESEARCH
-        </div>
-
-        <h3>
-          Learning by helping others learn
-        </h3>
-
-        <p>
-          Teaching and mentoring have become an important part of
-          my professional identity. Working with students has also
-          strengthened my own understanding of research methods,
-          statistics, health sciences, and data analysis.
-        </p>
-
-        <ul>
-          <li>University-level teaching and research mentoring.</li>
-          <li>Student guidance in health data and research methods.</li>
-          <li>Research and project support in academic settings.</li>
-        </ul>
-
-      </article>
-
-
-      <article class="experience-card fade-up">
-
-        <div class="number">
-          04 · HEALTH DATA SCIENCE
-        </div>
-
-        <h3>
-          Asking better questions with data
-        </h3>
-
-        <p>
-          Health data science has become the next stage of my
-          professional evolution. Training in health analytics has
-          allowed me to combine clinical and public health knowledge
-          with statistical modeling, programming, visualization,
-          and reproducible analysis.
-        </p>
-
-        <ul>
-          <li>R, Python, SAS, SQL, SPSS, Excel, and Power BI.</li>
-          <li>Predictive and Bayesian modeling.</li>
-          <li>Population health and clinical data analysis.</li>
-        </ul>
-
-      </article>
-
-    </div>
 
   </div>
 
@@ -1351,94 +901,10 @@ footer{
     </h2>
 
     <p class="section-intro">
-      My research interests connect clinical knowledge, population
-      health, statistical reasoning, and data science. I am
-      particularly interested in research that can move from
-      descriptive patterns toward meaningful explanations,
-      prediction, and better public health decisions.
+      Research interests include chronic disease epidemiology,
+      cancer research, Bayesian and predictive modeling, health
+      equity, GIS, and public health informatics.
     </p>
-
-
-    <div class="research-grid">
-
-      <div class="research-main fade-up">
-
-        <h3>
-          Current and recent research
-        </h3>
-
-        <p>
-          My work includes population-based analysis, Bayesian
-          modeling, cancer-related research, mental health,
-          metabolic risk, health equity, and community health.
-          Across projects, I am interested in how different
-          characteristics and exposures interact and how analytic
-          methods can help reveal clinically and socially meaningful
-          patterns.
-        </p>
-
-        <ul class="research-list">
-
-          <li>
-            <strong>Breast cancer research:</strong>
-            analysis of mental health outcomes, metabolic risk
-            factors, treatment characteristics, and phenotypic
-            patterns using All of Us Research Program data.
-          </li>
-
-          <li>
-            <strong>Bayesian diabetes modeling:</strong>
-            Bayesian logistic regression using NHANES data to
-            explore diabetes risk and compare Bayesian inference
-            with survey-weighted frequentist approaches.
-          </li>
-
-          <li>
-            <strong>Community food access:</strong>
-            assessment of food environments, household resources,
-            and neighborhood-level access to healthy foods.
-          </li>
-
-          <li>
-            <strong>Health equity:</strong>
-            interest in understanding how socioeconomic,
-            demographic, environmental, and healthcare factors
-            contribute to differences in health outcomes.
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <div class="research-side fade-up">
-
-        <h3>
-          Research interests
-        </h3>
-
-        <p>
-          The questions I am most interested in live where several
-          disciplines overlap.
-        </p>
-
-        <ul class="research-list">
-
-          <li>Chronic Disease Epidemiology</li>
-          <li>Cancer Epidemiology</li>
-          <li>Bayesian Statistical Modeling</li>
-          <li>Predictive Analytics</li>
-          <li>Health Equity</li>
-          <li>Precision Public Health</li>
-          <li>Public Health Informatics</li>
-          <li>Spatial Epidemiology & GIS</li>
-          <li>Mental Health & Metabolic Health</li>
-
-        </ul>
-
-      </div>
-
-    </div>
 
   </div>
 
@@ -1462,78 +928,10 @@ footer{
     </h2>
 
     <p class="section-intro">
-      Teaching and mentoring are an important part of my work.
-      My goal is to make health data, statistics, research
-      methods, and analytical thinking understandable, practical,
-      and relevant to students in the health sciences.
+      Teaching and mentoring are an important part of my work,
+      with a focus on making health data and research methods
+      understandable and useful.
     </p>
-
-
-    <div class="teaching-grid">
-
-      <article class="teaching-card fade-up">
-
-        <h3>
-          Health sciences & data analysis
-        </h3>
-
-        <p>
-          I enjoy helping students understand how data can answer
-          real questions in healthcare and public health. Rather
-          than focusing only on formulas or software, I emphasize
-          understanding the question, choosing an appropriate
-          method, interpreting results, and communicating findings.
-        </p>
-
-        <ul>
-          <li>Descriptive and inferential statistics</li>
-          <li>Research design and interpretation</li>
-          <li>Health data analysis</li>
-          <li>Evidence-based decision making</li>
-        </ul>
-
-      </article>
-
-
-      <article class="teaching-card fade-up">
-
-        <h3>
-          Mentoring researchers
-        </h3>
-
-        <p>
-          Research mentoring is an opportunity to help students
-          move from an idea to a clear research question, from raw
-          data to analysis, and from statistical output to a
-          meaningful interpretation.
-        </p>
-
-        <ul>
-          <li>Developing research questions</li>
-          <li>Organizing and understanding datasets</li>
-          <li>Selecting appropriate analytical approaches</li>
-          <li>Communicating results clearly</li>
-        </ul>
-
-      </article>
-
-    </div>
-
-
-    <div class="teaching-philosophy fade-up">
-
-      <h3>
-        My teaching philosophy
-      </h3>
-
-      <p>
-        You do not have to know everything when you begin.
-        Stay curious, keep learning, and be willing to take a
-        new direction. Sometimes the next skill you learn opens
-        a door you never expected.
-      </p>
-
-    </div>
 
   </div>
 
@@ -1557,246 +955,10 @@ footer{
     </h2>
 
     <p class="section-intro">
-      A growing collection of manuscripts, research projects,
-      academic work, and data-driven analyses connecting medicine,
-      public health, epidemiology, and analytics.
+      Publications, manuscripts, research projects, and
+      data-driven work connecting medicine, public health, and
+      analytics.
     </p>
-
-
-    <div class="publication-list">
-
-      <article class="publication fade-up">
-
-        <div class="publication-number">
-          01
-        </div>
-
-        <div>
-
-          <h3>
-            Bayesian Logistic Regression for Predicting Diabetes Risk
-          </h3>
-
-          <p>
-            A methodological analysis using NHANES data to examine
-            diabetes risk and compare Bayesian logistic regression
-            with survey-weighted frequentist modeling. The project
-            explores the value and limitations of Bayesian approaches
-            when working with complex population health data.
-          </p>
-
-          <span class="publication-status">
-            Manuscript / Data Science Research
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <article class="publication fade-up">
-
-        <div class="publication-number">
-          02
-        </div>
-
-        <div>
-
-          <h3>
-            Breast Cancer, Mental Health & Metabolic Risk
-          </h3>
-
-          <p>
-            An ongoing research program using All of Us Research
-            Program data to examine relationships among breast
-            cancer, mental health outcomes, metabolic conditions,
-            treatment characteristics, and sociodemographic factors.
-          </p>
-
-          <span class="publication-status">
-            Ongoing Research
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <article class="publication fade-up">
-
-        <div class="publication-number">
-          03
-        </div>
-
-        <div>
-
-          <h3>
-            Community Food Access & Health
-          </h3>
-
-          <p>
-            Community-based work examining food access, neighborhood
-            food environments, household resources, and the broader
-            social context that influences healthy choices and
-            population health.
-          </p>
-
-          <span class="publication-status">
-            Public Health Research
-          </span>
-
-        </div>
-
-      </article>
-
-
-      <article class="publication fade-up">
-
-        <div class="publication-number">
-          04
-        </div>
-
-        <div>
-
-          <h3>
-            Research, Learning & the Next Question
-          </h3>
-
-          <p>
-            Academic work is an evolving process. This section will
-            continue to grow as manuscripts, presentations,
-            publications, research collaborations, and new projects
-            develop.
-          </p>
-
-          <span class="publication-status">
-            More to come
-          </span>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================
-     BLOG
-========================================= -->
-
-<section id="blog" class="blog">
-
-  <div class="wrap">
-
-    <p class="eyebrow">
-      Blog
-    </p>
-
-    <h2 class="section-title">
-      Notes from the journey.
-    </h2>
-
-    <p class="section-intro">
-      A more personal space for reflections on medicine,
-      public health, learning, data, food, gardening, creativity,
-      and the everyday moments that happen between the big projects.
-    </p>
-
-
-    <div class="blog-grid">
-
-      <article class="blog-card fade-up">
-
-        <div class="blog-date">
-          Life · Garden
-        </div>
-
-        <h3>
-          From Backyard Grapes to the Table
-        </h3>
-
-        <p>
-          There is something special about growing grapes in the
-          backyard, watching them ripen, harvesting them by hand,
-          and finally bringing them to the table. It is a simple
-          reminder that food connects us to seasons, patience,
-          work, and health.
-        </p>
-
-        <a href="https://sites.google.com/view/namitamishra/garden-projects"
-           target="_blank"
-           rel="noopener">
-          Explore the garden →
-        </a>
-
-      </article>
-
-
-      <article class="blog-card fade-up">
-
-        <div class="blog-date">
-          Learning · Data
-        </div>
-
-        <h3>
-          What I Am Learning From Data
-        </h3>
-
-        <p>
-          Data science is not only about writing code or fitting
-          models. It is about learning to ask better questions,
-          recognize uncertainty, understand limitations, and
-          communicate what the data can — and cannot — tell us.
-        </p>
-
-        <a href="#research">
-          Read the research journey →
-        </a>
-
-      </article>
-
-
-      <article class="blog-card fade-up">
-
-        <div class="blog-date">
-          Life · Creativity
-        </div>
-
-        <h3>
-          Creating Between Everything Else
-        </h3>
-
-        <p>
-          Gardening, cooking, sewing, and other hands-on projects
-          offer a different kind of creativity. They are small,
-          tangible reminders that making something with your hands
-          can be just as satisfying as solving a problem with data.
-        </p>
-
-        <a href="#beyond">
-          See life beyond the clinic →
-        </a>
-
-      </article>
-
-    </div>
-
-
-    <div class="blog-note fade-up">
-
-      <p>
-        <strong>Coming soon:</strong>
-        longer reflections on medicine and public health,
-        learning data science later in a career, research lessons,
-        everyday health, food and gardening, and the unexpected
-        connections between professional and personal life.
-      </p>
-
-    </div>
 
   </div>
 
@@ -1821,7 +983,7 @@ footer{
 
     <p class="section-intro">
       A few of the things that make life interesting outside
-      research, teaching, and professional work.
+      research, teaching, and clinical work.
     </p>
 
 
@@ -1853,9 +1015,7 @@ footer{
 
           <p>
             Time spent growing, harvesting, and enjoying what
-            comes from the backyard garden. From watching a plant
-            develop to bringing the harvest into the kitchen,
-            gardening is a slower kind of learning.
+            comes from the backyard garden.
           </p>
 
           <a
@@ -1878,7 +1038,7 @@ footer{
 
           <img
             src="https://lh3.googleusercontent.com/sitesv/AG8ngQUXd7aM-376KavcA7ap7H0JOP2XlnuOLXubHzGK2ZsgusOv2Gqq1iWSW77PaZwn6-ItVrC23UqlQeI8ymRhMQtZ2jVyYpvjqV6eaMIRWai2B6ODYBGh1Rijt6XqW8FzOwMxjq7IEvo9GLgTfbre1RYZob3lF3xwln_pFClF7h2QbVpp06Igfuz5zyXXkPgBcFtnN80AryIn5SWpx0dcuud69kCw53n_BpETVyvRAPU=w1280"
-            alt="Morning tea and culinary diary"
+            alt="Morning tea, culinary diary"
             loading="lazy">
 
         </div>
@@ -1894,10 +1054,9 @@ footer{
           </h3>
 
           <p>
-            A running log of what is on the table — from
+            A running log of what's on the table — from
             multigrain dosa and khaman dhokla to Indo-Chinese
-            chilli paneer, everyday cooking, family meals,
-            and recipes documented step by step.
+            chilli paneer documented step by step.
           </p>
 
           <a
@@ -1936,10 +1095,8 @@ footer{
           </h3>
 
           <p>
-            Another quiet, hands-on outlet — small sewing projects
-            made in between everything else. The process is less
-            about perfection and more about patience, creativity,
-            and making something useful.
+            Another quiet, hands-on outlet — small sewing
+            projects made in between everything else.
           </p>
 
           <a
@@ -1981,10 +1138,9 @@ footer{
     </h2>
 
     <p class="footer-desc">
-      I'm interested in academic and research opportunities
+      I'm looking for academic and research opportunities
       at the intersection of medicine, public health,
-      epidemiology, and data science. Reach out —
-      I'd love to hear from you.
+      and data science. Reach out — I'd love to hear from you.
     </p>
 
     <div class="contact-row">
@@ -2018,7 +1174,8 @@ footer{
       GitHub <span>↗</span>
     </a>
 
-    <a href="mailto:dr.namita9670@gmail.com">
+    <a
+      href="mailto:dr.namita9670@gmail.com">
       Email <span>↗</span>
     </a>
 
@@ -2068,8 +1225,10 @@ if (navToggle && navLinks) {
       isOpen ? "true" : "false"
     );
 
-    navToggle.textContent =
-      isOpen ? "CLOSE" : "MENU";
+    navToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation" : "Open navigation"
+    );
 
   });
 
@@ -2085,7 +1244,10 @@ if (navToggle && navLinks) {
         "false"
       );
 
-      navToggle.textContent = "MENU";
+      navToggle.setAttribute(
+        "aria-label",
+        "Open navigation"
+      );
 
     });
 
@@ -2109,8 +1271,6 @@ const stageMap = {
   teaching:"teacher",
 
   publications:"teacher",
-
-  blog:"creator",
 
   beyond:"creator"
 
@@ -2236,3 +1396,4 @@ if ("IntersectionObserver" in window){
 
 </body>
 </html>
+```
