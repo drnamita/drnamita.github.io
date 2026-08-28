@@ -1,188 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- =========================
-     BEYOND THE CLINIC / PROJECTS
-     ========================= -->
+<title>Dr. Namita Mishra — Physician · Public Health · Data Science</title>
 
-<section id="beyond" class="beyond-section">
+<meta name="description"
+content="Dr. Namita Mishra — physician, public health professional, and health data scientist. Clinical medicine, research, teaching, and life beyond the clinic.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,0..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+  --ink:#12262a;
+  --ink-soft:#24403f;
+  --paper:#f1efe1;
+  --paper-dim:#e7e3d1;
+  --card:#fbfaf3;
+  --gold:#c4872b;
+  --gold-dark:#96631c;
+  --berry:#8b3a42;
+  --teal:#1f4e4a;
+  --line:rgba(18,38,42,0.14);
+  --line-light:rgba(241,239,225,0.22);
+  --shadow:0 20px 40px -24px rgba(18,38,42,0.35);
+
+  --serif:"Fraunces", Georgia, serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  color:inherit;
+}
+
+::selection{
+  background:var(--gold);
+  color:var(--ink);
+}
+
+.wrap{
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 14px;
+}
+
+.eyebrow::before{
+  content:"";
+  width:22px;
+  height:1px;
+  background:var(--gold-dark);
+  display:inline-block;
+}
+
+.eyebrow.on-dark{
+  color:#e7c88a;
+}
+
+.eyebrow.on-dark::before{
+  background:#e7c88a;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.site-nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(241,239,225,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+  max-width:1160px;
+  margin:0 auto;
+  padding:14px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.nav-name{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:19px;
+  letter-spacing:.01em;
+  text-decoration:none;
+  color:var(--ink);
+}
+
+.nav-links{
+  display:flex;
+  gap:26px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:var(--ink-soft);
+  padding-bottom:3px;
+  border-bottom:1px solid transparent;
+}
+
+.nav-links a:hover{
+  border-bottom-color:var(--gold);
+  color:var(--ink);
+}
+
+.nav-toggle{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:7px 11px;
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--ink);
+  cursor:pointer;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+  background:
+    radial-gradient(
+      1100px 480px at 82% -10%,
+      rgba(196,135,43,.20),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      var(--ink) 0%,
+      #0e1e21 100%
+    );
+
+  color:var(--paper);
+  position:relative;
+  overflow:hidden;
+  padding:64px 0 70px;
+}
+
+.hero-grid{
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(
+      var(--line-light) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--line-light) 1px,
+      transparent 1px
+    );
+
+  background-size:52px 52px;
+  opacity:.35;
+
+  mask-image:linear-gradient(
+    180deg,
+    black,
+    transparent 78%
+  );
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+}
+
+/* =========================================
+   JOURNEY
+========================================= */
+
+.journey{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:0;
+
+  font-family:var(--mono);
+  font-size:13px;
+  letter-spacing:.06em;
+
+  color:rgba(241,239,225,.55);
+
+  margin-bottom:46px;
+}
+
+.journey span{
+  padding:6px 0;
+}
+
+.journey span.arrow{
+  color:rgba(241,239,225,.30);
+  padding:0 10px;
+}
+
+.journey span.stage{
+  color:rgba(241,239,225,.55);
+  text-transform:uppercase;
+  transition:color .3s ease;
+}
+
+.journey span.stage.active{
+  color:#e7c88a;
+  font-weight:600;
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-main{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:56px;
+  align-items:end;
+}
+
+.hero-name{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:clamp(40px,6vw,68px);
+  line-height:1.02;
+  margin:0 0 18px;
+  letter-spacing:-.01em;
+}
+
+.hero-name em{
+  font-style:italic;
+  font-weight:500;
+  color:#e7c88a;
+}
+
+.hero-subtitle{
+  max-width:680px;
+  font-size:19px;
+  color:rgba(241,239,225,.78);
+  margin:0 0 26px;
+}
+
+.hero-description{
+  max-width:650px;
+  color:rgba(241,239,225,.66);
+  margin:0;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:11px 18px;
+  border-radius:5px;
+  text-decoration:none;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.05em;
+  transition:all .2s ease;
+}
+
+.btn-solid{
+  background:var(--gold);
+  color:var(--ink);
+}
+
+.btn-solid:hover{
+  background:#e0a74b;
+  transform:translateY(-1px);
+}
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+section{
+  padding:82px 0;
+}
+
+.section-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,4vw,48px);
+  line-height:1.1;
+  margin:0 0 20px;
+}
+
+.section-intro{
+  max-width:720px;
+  color:var(--ink-soft);
+  margin-bottom:45px;
+}
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about{
+  background:var(--paper);
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+}
+
+.about p{
+  margin-top:0;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.beyond{
+  background:var(--paper-dim);
+}
+
+.beyond-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+
+.bcard{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.bcard:hover{
+  transform:translateY(-4px);
+  box-shadow:0 25px 45px -25px rgba(18,38,42,.45);
+}
+
+.bcard .img{
+  width:100%;
+  height:240px;
+  overflow:hidden;
+  background:var(--paper-dim);
+}
+
+.bcard .img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.bcard .body{
+  padding:25px;
+}
+
+.tag{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  margin-bottom:9px;
+}
+
+.bcard h3{
+  font-family:var(--serif);
+  font-size:25px;
+  line-height:1.15;
+  margin:0 0 12px;
+}
+
+.bcard p{
+  color:var(--ink-soft);
+  margin:0 0 18px;
+}
+
+.bcard a{
+  font-family:var(--mono);
+  font-size:12px;
+  text-decoration:none;
+  color:var(--teal);
+  border-bottom:1px solid var(--gold);
+}
+
+.bcard a:hover{
+  color:var(--gold-dark);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+  background:
+    linear-gradient(
+      180deg,
+      var(--ink) 0%,
+      #0e1e21 100%
+    );
+
+  color:var(--paper);
+  padding:78px 0 25px;
+}
+
+.footer-title{
+  font-family:var(--serif);
+  font-size:clamp(34px,4.5vw,55px);
+  line-height:1.08;
+  max-width:800px;
+  margin:0 0 18px;
+}
+
+.footer-title em{
+  color:#e7c88a;
+  font-weight:500;
+}
+
+.footer-desc{
+  max-width:700px;
+  color:rgba(241,239,225,.68);
+  margin:0 0 25px;
+}
+
+.contact-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.foot-links{
+  max-width:1160px;
+  margin:60px auto 0;
+  padding:25px 28px 0;
+
+  display:flex;
+  gap:30px;
+
+  border-top:1px solid var(--line-light);
+}
+
+.foot-links a{
+  color:rgba(241,239,225,.75);
+  text-decoration:none;
+
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.06em;
+}
+
+.foot-links a:hover{
+  color:#e7c88a;
+}
+
+.foot-links span{
+  color:#e7c88a;
+}
+
+.foot-bottom{
+  margin-top:30px;
+
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+
+  color:rgba(241,239,225,.45);
+
+  font-family:var(--mono);
+  font-size:11px;
+}
+
+/* =========================================
+   FADE ANIMATION
+========================================= */
+
+.fade-up{
+  opacity:0;
+  transform:translateY(20px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.fade-up.in{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:900px){
+
+  .hero-main{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .beyond-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+}
+
+@media (max-width:760px){
+
+  .nav-links{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+
+    flex-direction:column;
+    gap:0;
+
+    background:var(--paper);
+
+    border-bottom:1px solid var(--line);
+
+    max-height:0;
+    overflow:hidden;
+
+    transition:max-height .25s ease;
+  }
+
+  .nav-links.open{
+    max-height:400px;
+  }
+
+  .nav-links a{
+    display:block;
+    padding:14px 28px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .nav-toggle{
+    display:block;
+  }
+
+  .journey{
+    line-height:1.8;
+  }
+
+  .hero{
+    padding-top:45px;
+  }
+
+  section{
+    padding:60px 0;
+  }
+
+  .beyond-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bcard .img{
+    height:220px;
+  }
+
+  .foot-links{
+    flex-wrap:wrap;
+    padding-left:28px;
+    padding-right:28px;
+  }
+
+  .foot-bottom{
+    flex-direction:column;
+    padding-bottom:20px;
+  }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+  *{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<header class="site-nav">
+
+  <div class="nav-inner">
+
+    <a class="nav-name" href="#top">
+      Dr. Namita Mishra
+    </a>
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Open navigation"
+      aria-expanded="false">
+      MENU
+    </button>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+          <a href="#research">Research</a>
+        </li>
+
+        <li>
+          <a href="#teaching">Teaching</a>
+        </li>
+
+        <li>
+          <a href="#publications">Publications</a>
+        </li>
+
+        <li>
+          <a href="#beyond">Beyond</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<main id="top">
+
+<section class="hero">
+
+  <div class="hero-grid"></div>
+
+  <div class="wrap hero-inner">
+
+    <div class="journey" id="journeyThread">
+
+      <span class="stage active" data-stage="human">
+        HUMAN
+      </span>
+
+      <span class="arrow">→</span>
+
+      <span class="stage" data-stage="healer">
+        HEALER
+      </span>
+
+      <span class="arrow">→</span>
+
+      <span class="stage" data-stage="learner">
+        LEARNER
+      </span>
+
+      <span class="arrow">→</span>
+
+      <span class="stage" data-stage="analyst">
+        ANALYST
+      </span>
+
+      <span class="arrow">→</span>
+
+      <span class="stage" data-stage="teacher">
+        TEACHER
+      </span>
+
+      <span class="arrow">→</span>
+
+      <span class="stage" data-stage="creator">
+        CREATOR
+      </span>
+
+    </div>
+
+
+    <div class="hero-main">
+
+      <div>
+
+        <p class="eyebrow on-dark">
+          Physician · Public Health · Data Science
+        </p>
+
+        <h1 class="hero-name">
+          Dr. Namita <em>Mishra</em>
+        </h1>
+
+        <p class="hero-subtitle">
+          Medicine, public health, and data science —
+          connected by curiosity.
+        </p>
+
+        <p class="hero-description">
+          A physician and public health professional exploring how
+          data, research, and human-centered thinking can improve
+          health and inform better decisions.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section id="about" class="about">
+
   <div class="wrap">
 
-    <p class="eyebrow">Beyond the Clinic</p>
+    <p class="eyebrow">
+      About
+    </p>
+
+    <div class="about-grid">
+
+      <div class="fade-up">
+
+        <h2 class="section-title">
+          A career that keeps evolving.
+        </h2>
+
+        <p>
+          My journey has moved from clinical medicine to public
+          health, teaching, research, and health data science.
+          Each step has added another way of understanding health
+          and the people behind the numbers.
+        </p>
+
+      </div>
+
+      <div class="fade-up">
+
+        <p>
+          I am especially interested in chronic disease
+          epidemiology, cancer research, health equity, Bayesian
+          modeling, predictive analytics, and precision public
+          health.
+        </p>
+
+        <p>
+          Beyond academic and professional work, I enjoy the
+          quieter parts of life — gardening, cooking, sewing,
+          learning, and creating things by hand.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     EXPERIENCE
+========================================= -->
+
+<section id="experience">
+
+  <div class="wrap">
+
+    <p class="eyebrow">
+      Experience
+    </p>
 
     <h2 class="section-title">
-      Life, <em>creativity</em> &amp; the garden.
+      Medicine → Public Health → Data
     </h2>
 
     <p class="section-intro">
-      The work continues beyond research and teaching — through gardening,
-      cooking, sewing, and the simple pleasure of making something by hand.
+      A multidisciplinary path combining clinical experience,
+      public health practice, education, research, and health
+      analytics.
     </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     RESEARCH
+========================================= -->
+
+<section id="research">
+
+  <div class="wrap">
+
+    <p class="eyebrow">
+      Research
+    </p>
+
+    <h2 class="section-title">
+      Questions first. Data second.
+    </h2>
+
+    <p class="section-intro">
+      Research interests include chronic disease epidemiology,
+      cancer research, Bayesian and predictive modeling, health
+      equity, GIS, and public health informatics.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     TEACHING
+========================================= -->
+
+<section id="teaching">
+
+  <div class="wrap">
+
+    <p class="eyebrow">
+      Teaching
+    </p>
+
+    <h2 class="section-title">
+      Helping others learn.
+    </h2>
+
+    <p class="section-intro">
+      Teaching and mentoring are an important part of my work,
+      with a focus on making health data and research methods
+      understandable and useful.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     PUBLICATIONS
+========================================= -->
+
+<section id="publications">
+
+  <div class="wrap">
+
+    <p class="eyebrow">
+      Publications
+    </p>
+
+    <h2 class="section-title">
+      Research in progress.
+    </h2>
+
+    <p class="section-intro">
+      Publications, manuscripts, research projects, and
+      data-driven work connecting medicine, public health, and
+      analytics.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     BEYOND THE CLINIC
+========================================= -->
+
+<section id="beyond" class="beyond">
+
+  <div class="wrap">
+
+    <p class="eyebrow">
+      Beyond the Clinic
+    </p>
+
+    <h2 class="section-title">
+      Life beyond the spreadsheet.
+    </h2>
+
+    <p class="section-intro">
+      A few of the things that make life interesting outside
+      research, teaching, and clinical work.
+    </p>
+
 
     <div class="beyond-grid">
 
-      <!-- Garden -->
-      <article class="bcard fade-up">
+
+      <!-- GARDEN -->
+
+      <div class="bcard fade-up">
+
         <div class="img">
+
           <img
             src="https://lh3.googleusercontent.com/sitesv/AG8ngQUXd7aM-376KavcA7ap7H0JOP2XlnuOLXubHzGK2ZsgusOv2Gqq1iWSW77PaZwn6-ItVrC23UqlQeI8ymRhMQtZ2jVyYpvjqV6eaMIRWai2B6ODYBGh1Rijt6XqW8FzOwMxjq7IEvo9GLgTfbre1RYZob3lF3xwln_pFClF7h2QbVpp06Igfuz5zyXXkPgBcFtnN80AryIn5SWpx0dcuud69kCw53n_BpETVyvRAPU=w1280"
-            alt="Backyard garden and grape harvest"
-            loading="lazy"
-          >
+            alt="Garden projects"
+            loading="lazy">
+
         </div>
 
         <div class="body">
-          <span class="tag">Garden Projects</span>
 
-          <h3>From Garden to Table</h3>
+          <span class="tag">
+            Garden
+          </span>
+
+          <h3>
+            Growing Things
+          </h3>
 
           <p>
-            Growing, harvesting, and bringing the garden to the table —
-            including backyard grapes, seasonal blooms, and the simple
-            pleasure of growing food at home.
+            Time spent growing, harvesting, and enjoying what
+            comes from the backyard garden.
           </p>
 
           <a
             href="https://sites.google.com/view/namitamishra/garden-projects"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             See the garden →
           </a>
+
         </div>
-      </article>
+
+      </div>
 
 
-      <!-- Culinary Diary -->
-      <article class="bcard fade-up">
+      <!-- CULINARY DIARY -->
+
+      <div class="bcard fade-up">
+
         <div class="img">
+
           <img
-            src="https://lh3.googleusercontent.com/sitesv/AG8ngQWhGeiXvtOzhrF-A0hVG4369X8NvaqwGcsuonvYg8xvzjWtVhfF75yhWAUgQj40NFsQeU293yN0kWPN-mHa-cMhIyOpBwpRzRPorA3GCfpJ5R86MQcVgAiA1JVCSGQdbC3fFlbYzfCsk0e7L21GcodsN799GhiLb8sySLHEDiTYMPZLxUKwS9suskUJVjTwEOokvqHM2pGJh_tkpkTjMvDpRYkr5PrLg910NEsGeME=w1280"
-            alt="Morning tea and homemade food"
-            loading="lazy"
-          >
+            src="https://lh3.googleusercontent.com/sitesv/AG8ngQUXd7aM-376KavcA7ap7H0JOP2XlnuOLXubHzGK2ZsgusOv2Gqq1iWSW77PaZwn6-ItVrC23UqlQeI8ymRhMQtZ2jVyYpvjqV6eaMIRWai2B6ODYBGh1Rijt6XqW8FzOwMxjq7IEvo9GLgTfbre1RYZob3lF3xwln_pFClF7h2QbVpp06Igfuz5zyXXkPgBcFtnN80AryIn5SWpx0dcuud69kCw53n_BpETVyvRAPU=w1280"
+            alt="Morning tea, culinary diary"
+            loading="lazy">
+
         </div>
 
         <div class="body">
-          <span class="tag">Culinary Diary</span>
 
-          <h3>Morning Starts With Tea</h3>
+          <span class="tag">
+            Culinary Diary
+          </span>
+
+          <h3>
+            Morning Starts With Tea
+          </h3>
 
           <p>
-            A running log of what is on the table — from multigrain dosa
-            and khaman dhokla to Indo-Chinese chilli paneer, documented
-            step by step.
+            A running log of what's on the table — from
+            multigrain dosa and khaman dhokla to Indo-Chinese
+            chilli paneer documented step by step.
           </p>
 
           <a
             href="https://sites.google.com/view/namitamishra/culinary-diary"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             Browse the diary →
           </a>
+
         </div>
-      </article>
+
+      </div>
 
 
-      <!-- Sewing -->
-      <article class="bcard fade-up">
+      <!-- SEWING -->
+
+      <div class="bcard fade-up">
+
         <div class="img">
+
           <img
             src="https://lh3.googleusercontent.com/sitesv/AG8ngQWhGeiXvtOzhrF-A0hVG4369X8NvaqwGcsuonvYg8xvzjWtVhfF75yhWAUgQj40NFsQeU293yN0kWPN-mHa-cMhIyOpBwpRzRPorA3GCfpJ5R86MQcVgAiA1JVCSGQdbC3fFlbYzfCsk0e7L21GcodsN799GhiLb8sySLHEDiTYMPZLxUKwS9suskUJVjTwEOokvqHM2pGJh_tkpkTjMvDpRYkr5PrLg910NEsGeME=w1280"
-            alt="Sewing project"
-            loading="lazy"
-          >
+            alt="Sewing projects"
+            loading="lazy">
+
         </div>
 
         <div class="body">
-          <span class="tag">Sewing</span>
 
-          <h3>Sewing Projects</h3>
+          <span class="tag">
+            Sewing
+          </span>
+
+          <h3>
+            Sewing Projects
+          </h3>
 
           <p>
-            Another quiet, hands-on outlet — small sewing projects made
-            in between research, teaching, family, and everyday life.
+            Another quiet, hands-on outlet — small sewing
+            projects made in between everything else.
           </p>
 
           <a
             href="https://sites.google.com/view/namitamishra/sewing-projects"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             See the projects →
           </a>
+
         </div>
-      </article>
 
-    </div>
-  </div>
-</section>
-
-
-<!-- =========================
-     FOOTER / CONTACT
-     ========================= -->
-
-<footer class="site-footer">
-
-  <div class="wrap footer-inner">
-
-    <div class="footer-contact">
-
-      <p class="eyebrow on-dark">Get in Touch</p>
-
-      <h2 class="footer-title">
-        Let's <em>talk</em> — research, teaching, or collaboration.
-      </h2>
-
-      <p class="footer-desc">
-        I'm looking for academic and research opportunities at the
-        intersection of medicine, public health, and data science.
-        Reach out — I'd love to hear from you.
-      </p>
-
-      <div class="contact-row">
-        <a
-          class="btn btn-solid"
-          href="mailto:dr.namita9670@gmail.com"
-        >
-          dr.namita9670@gmail.com
-        </a>
       </div>
 
+
     </div>
 
+  </div>
 
-    <div class="foot-links">
+</section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER / CONTACT
+========================================= -->
+
+<footer>
+
+  <div class="wrap">
+
+    <p class="eyebrow on-dark">
+      Get in Touch
+    </p>
+
+    <h2 class="footer-title">
+      Let's <em>talk</em> — research, teaching,
+      or collaboration.
+    </h2>
+
+    <p class="footer-desc">
+      I'm looking for academic and research opportunities
+      at the intersection of medicine, public health,
+      and data science. Reach out — I'd love to hear from you.
+    </p>
+
+    <div class="contact-row">
 
       <a
-        href="https://www.linkedin.com/in/dr-namita-mishra-466b0999/"
-        target="_blank"
-        rel="noopener"
-      >
-        LinkedIn <span>↗</span>
-      </a>
-
-      <a
-        href="https://github.com/drnamita"
-        target="_blank"
-        rel="noopener"
-      >
-        GitHub <span>↗</span>
-      </a>
-
-      <a href="mailto:dr.namita9670@gmail.com">
-        Email <span>↗</span>
+        class="btn btn-solid"
+        href="mailto:dr.namita9670@gmail.com">
+        dr.namita9670@gmail.com
       </a>
 
     </div>
 
   </div>
 
+
+  <!-- FOOTER LINKS -->
+
+  <div class="foot-links">
+
+    <a
+      href="https://www.linkedin.com/in/dr-namita-mishra-466b0999/"
+      target="_blank"
+      rel="noopener">
+      LinkedIn <span>↗</span>
+    </a>
+
+    <a
+      href="https://github.com/drnamita"
+      target="_blank"
+      rel="noopener">
+      GitHub <span>↗</span>
+    </a>
+
+    <a href="mailto:dr.namita9670@gmail.com">
+      Email <span>↗</span>
+    </a>
+
+  </div>
+
+
+  <!-- FOOTER BOTTOM -->
 
   <div class="wrap foot-bottom">
 
     <span>
-      © 2026 Namita Mishra — human → healer → learner → analyst → teacher → creator
+      © 2026 Namita Mishra —
+      human → healer → learner → analyst →
+      teacher → creator
     </span>
 
     <span>
@@ -194,454 +1191,188 @@
 </footer>
 
 
-<style>
-
-/* =========================
-   BEYOND SECTION
-   ========================= */
-
-.beyond-section {
-  padding: 90px 0;
-  background: var(--paper);
-}
-
-.section-title {
-  font-family: var(--serif);
-  font-size: clamp(36px, 5vw, 54px);
-  line-height: 1.08;
-  font-weight: 600;
-  margin: 0 0 18px;
-  letter-spacing: -0.02em;
-}
-
-.section-title em {
-  font-style: italic;
-  font-weight: 500;
-  color: var(--berry);
-}
-
-.section-intro {
-  max-width: 680px;
-  margin: 0 0 48px;
-  color: var(--ink-soft);
-  font-size: 17px;
-}
-
-
-/* =========================
-   CARD GRID
-   ========================= */
-
-.beyond-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-  align-items: stretch;
-}
-
-
-/* =========================
-   CARDS
-   ========================= */
-
-.bcard {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.bcard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 24px 48px -24px rgba(18,38,42,0.42);
-}
-
-
-/* =========================
-   CARD IMAGE
-   ========================= */
-
-.bcard .img {
-  width: 100%;
-  height: 240px;
-  overflow: hidden;
-  background: var(--paper-dim);
-}
-
-.bcard .img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.4s ease;
-}
-
-.bcard:hover .img img {
-  transform: scale(1.04);
-}
-
-
-/* =========================
-   CARD CONTENT
-   ========================= */
-
-.bcard .body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 26px;
-}
-
-.bcard .tag {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold-dark);
-  margin-bottom: 10px;
-}
-
-.bcard h3 {
-  font-family: var(--serif);
-  font-size: 27px;
-  line-height: 1.15;
-  margin: 0 0 12px;
-  font-weight: 600;
-}
-
-.bcard p {
-  margin: 0 0 22px;
-  color: var(--ink-soft);
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-.bcard a {
-  margin-top: auto;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  color: var(--teal);
-  font-weight: 600;
-}
-
-.bcard a:hover {
-  color: var(--gold-dark);
-}
-
-
-/* =========================
-   FOOTER
-   ========================= */
-
-.site-footer {
-  background:
-    linear-gradient(
-      180deg,
-      var(--ink) 0%,
-      #0e1e21 100%
-    );
-  color: var(--paper);
-  padding: 80px 0 0;
-}
-
-.footer-inner {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 60px;
-  align-items: end;
-}
-
-.footer-title {
-  font-family: var(--serif);
-  font-size: clamp(34px, 4vw, 52px);
-  line-height: 1.08;
-  max-width: 760px;
-  margin: 0 0 20px;
-}
-
-.footer-title em {
-  color: #e7c88a;
-  font-style: italic;
-}
-
-.footer-desc {
-  max-width: 680px;
-  margin: 0 0 28px;
-  color: rgba(241,239,225,0.72);
-}
-
-.contact-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 11px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-}
-
-.btn-solid {
-  background: #e7c88a;
-  color: var(--ink);
-}
-
-.btn-solid:hover {
-  background: #f0d69d;
-}
-
-
-.foot-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
-}
-
-.foot-links a {
-  color: rgba(241,239,225,0.75);
-  text-decoration: none;
-  font-family: var(--mono);
-  font-size: 12px;
-}
-
-.foot-links a:hover {
-  color: #e7c88a;
-}
-
-.foot-links span {
-  margin-left: 5px;
-}
-
-
-.foot-bottom {
-  margin-top: 70px;
-  padding-top: 20px;
-  padding-bottom: 22px;
-  border-top: 1px solid rgba(241,239,225,0.16);
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: rgba(241,239,225,0.48);
-  font-family: var(--mono);
-  font-size: 10px;
-}
-
-
-/* =========================
-   FADE-UP ANIMATION
-   ========================= */
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(18px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-}
-
-.fade-up.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* =========================
-   TABLET
-   ========================= */
-
-@media (max-width: 900px) {
-
-  .beyond-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .footer-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .foot-links {
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-}
-
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 640px) {
-
-  .beyond-section {
-    padding: 65px 0;
-  }
-
-  .beyond-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .bcard .img {
-    height: 230px;
-  }
-
-  .bcard .body {
-    padding: 22px;
-  }
-
-  .footer-inner {
-    gap: 32px;
-  }
-
-  .site-footer {
-    padding-top: 60px;
-  }
-
-  .foot-links {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .foot-bottom {
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 50px;
-  }
-
-}
-
-</style>
-
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
 <script>
 
-/* =========================
-   MOBILE NAV
-   ========================= */
+/* -----------------------------------------
+   Mobile navigation
+----------------------------------------- */
 
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
 
 if (navToggle && navLinks) {
 
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+  navToggle.addEventListener("click", () => {
+
+    const isOpen = navLinks.classList.toggle("open");
+
+    navToggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
   });
 
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
+
+  navLinks.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      navLinks.classList.remove("open");
+
+      navToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
     });
+
   });
 
 }
 
 
-/* =========================
-   JOURNEY THREAD
-   ========================= */
+/* -----------------------------------------
+   Journey thread
+----------------------------------------- */
 
 const stageMap = {
-  about: 'healer',
-  experience: 'learner',
-  research: 'analyst',
-  teaching: 'teacher',
-  publications: 'teacher',
-  beyond: 'creator'
+
+  about:"healer",
+
+  experience:"learner",
+
+  research:"analyst",
+
+  teaching:"teacher",
+
+  publications:"teacher",
+
+  beyond:"creator"
+
 };
 
 const stages =
-  document.querySelectorAll('#journeyThread .stage');
+  document.querySelectorAll(
+    "#journeyThread .stage"
+  );
 
 const sections =
   Object.keys(stageMap)
-    .map(id => document.getElementById(id))
-    .filter(Boolean);
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
 
-const setActive = (name) => {
+
+function setActive(name){
 
   stages.forEach(stage => {
 
     stage.classList.toggle(
-      'active',
+      "active",
       stage.dataset.stage === name
     );
 
   });
 
-};
+}
 
 
-if (sections.length && stages.length) {
+if ("IntersectionObserver" in window){
 
-  const io = new IntersectionObserver(
-    (entries) => {
+  const journeyObserver =
+    new IntersectionObserver(
 
-      entries.forEach(entry => {
+      entries => {
 
-        if (entry.isIntersecting) {
-          setActive(stageMap[entry.target.id]);
-        }
+        entries.forEach(entry => {
 
-      });
+          if(entry.isIntersecting){
 
-    },
-    {
-      rootMargin: '-40% 0px -50% 0px'
-    }
-  );
+            setActive(
+              stageMap[entry.target.id]
+            );
 
-  sections.forEach(section => io.observe(section));
+          }
+
+        });
+
+      },
+
+      {
+        rootMargin:"-40% 0px -50% 0px"
+      }
+
+    );
+
+
+  sections.forEach(section => {
+
+    journeyObserver.observe(section);
+
+  });
 
 }
 
 
-/* =========================
-   FADE-UP REVEAL
-   ========================= */
+/* -----------------------------------------
+   Fade-up animation
+----------------------------------------- */
 
-const fio = new IntersectionObserver(
-  (entries) => {
+const fadeElements =
+  document.querySelectorAll(".fade-up");
 
-    entries.forEach(entry => {
 
-      if (entry.isIntersecting) {
+if ("IntersectionObserver" in window){
 
-        entry.target.classList.add('in');
-        fio.unobserve(entry.target);
+  const fadeObserver =
+    new IntersectionObserver(
 
+      entries => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add("in");
+
+            fadeObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold:.15
       }
 
-    });
+    );
 
-  },
-  {
-    threshold: 0.15
-  }
-);
 
-document
-  .querySelectorAll('.fade-up')
-  .forEach(element => fio.observe(element));
+  fadeElements.forEach(element => {
+
+    fadeObserver.observe(element);
+
+  });
+
+} else {
+
+  fadeElements.forEach(element => {
+
+    element.classList.add("in");
+
+  });
+
+}
 
 </script>
+
+</body>
+</html>
