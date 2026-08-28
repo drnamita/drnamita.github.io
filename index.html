@@ -266,32 +266,6 @@
   @media (max-width:620px){.card-grid{grid-template-columns:1fr;}}
 
 
-<!-- ---------- Google Scholar ---------- -->
-<section class="scholar-section">
-  <div class="container">
-    <div class="scholar-card">
-      <div>
-        <div class="eyebrow">ACADEMIC PROFILE</div>
-        <h2>Google Scholar</h2>
-        <p>
-          View my publications, research articles, and citation record on
-          Google Scholar.
-        </p>
-      </div>
-
-      <a
-        href="https://scholar.google.com/citations?user=MC4KqA0AAAAJ&hl=en"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="scholar-button"
-      >
-        View Google Scholar
-        <span>↗</span>
-      </a>
-    </div>
-  </div>
-</section>
-
   /* ---------- teaching ---------- */
   .teach-layout{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
   .quote-block{
@@ -543,6 +517,71 @@
     </div>
   </div>
 </section>
+
+/* ---------- Google Scholar ---------- */
+.scholar-section{
+  padding:70px 0;
+  background:var(--paper);
+}
+
+.scholar-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  padding:32px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+.scholar-card h2{
+  font-family:var(--serif);
+  font-size:32px;
+  margin:8px 0 10px;
+  color:var(--ink);
+}
+
+.scholar-card p{
+  margin:0;
+  color:var(--muted);
+  max-width:600px;
+}
+
+.scholar-button{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 20px;
+  background:var(--ink);
+  color:var(--paper);
+  text-decoration:none;
+  border-radius:3px;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transition:transform .15s ease, background .15s ease;
+}
+
+.scholar-button:hover{
+  background:var(--gold);
+  color:var(--ink);
+  transform:translateY(-1px);
+}
+
+.scholar-button span{
+  font-size:16px;
+}
+
+@media (max-width:700px){
+  .scholar-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
 
 <section id="teaching">
   <div class="wrap">
