@@ -172,7 +172,11 @@
   box-shadow:var(--shadow);
   position:relative;
 }
-  .hero-portrait img{aspect-ratio:4/5; object-fit:cover; width:100%;}
+  .hero-portrait img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
   .hero-portrait figcaption{
     font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase;
     padding:10px 14px; color:rgba(241,239,225,0.55); background:rgba(0,0,0,0.15);
