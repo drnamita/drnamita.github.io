@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Namita Mishra | Health Data Scientist and Educator</title>
+<meta name="description" content="Physician turned health data scientist. Research in chronic disease epidemiology, geospatial analysis, and predictive modeling; adjunct instructor at the University of West Florida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#EEF3EC; --paper:#FBFCFA; --ink:#1D2B24; --muted:#4B5C53;
+  --berry:#9C2250; --berry-dark:#7B1A3F; --butter:#F5D97E; --leaf:#CFE0CB;
+  --serif:"Fraunces",Georgia,serif; --sans:"Figtree",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--paper)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:700}
+h3{font-size:1.35rem;font-weight:500}
+p{margin:0 0 1em;max-width:62ch}
+
+/* top bar */
+header{position:sticky;top:0;z-index:10;background:rgba(251,252,250,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--leaf)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.3rem;text-decoration:none}
+nav ul{list-style:none;display:flex;gap:6px;margin:0;padding:0;align-items:center}
+nav a{text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:500}
+nav a:hover{background:var(--sage)}
+.has-menu{position:relative}
+.menu{display:none;position:absolute;top:100%;left:0;min-width:190px;background:var(--paper);border:1px solid var(--leaf);border-radius:14px;padding:8px;flex-direction:column;gap:2px;box-shadow:0 10px 30px rgba(29,43,36,.12)}
+.has-menu:hover .menu,.has-menu:focus-within .menu{display:flex}
+.btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:13px 26px;border-radius:999px;border:2px solid var(--berry);transition:background .15s}
+.btn:hover{background:var(--berry-dark);border-color:var(--berry-dark)}
+.btn.ghost{background:transparent;color:var(--berry)}
+.btn.ghost:hover{background:var(--berry);color:#fff}
+
+/* hero */
+.hero{background:var(--sage);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:72px}
+.tag{font-weight:700;font-size:1.2rem;margin-bottom:.6em}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.art{position:relative;aspect-ratio:1/1;max-width:460px;width:100%;justify-self:center}
+.art .disc{position:absolute;inset:6%;border-radius:50%;background:var(--butter)}
+.art .disc2{position:absolute;width:34%;height:34%;right:0;top:0;border-radius:50%;background:var(--leaf)}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.trace{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.4s .3s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* feature card */
+section{padding:84px 0}
+.feature{display:grid;grid-template-columns:.9fr 1.1fr;border-radius:28px;overflow:hidden;background:var(--sage)}
+.feature .panel{background:var(--berry);color:#fff;padding:44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:320px}
+.feature .panel strong{font-family:var(--serif);font-size:clamp(2.6rem,5vw,3.8rem);line-height:1}
+.feature .body{padding:44px}
+.note{color:var(--muted);font-style:italic}
+
+/* places */
+.places{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+.place{border-left:6px solid var(--butter);padding:6px 0 6px 24px}
+.place h3 a{text-decoration:none}
+.place p{margin-bottom:.5em}
+.place .meta{color:var(--muted)}
+
+/* trio */
+.trio{background:var(--sage)}
+.trio .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}
+.card{background:var(--paper);border-radius:22px;padding:32px}
+.icon{width:52px;height:52px;border-radius:50%;background:var(--butter);display:grid;place-items:center;margin-bottom:18px}
+.icon svg{width:26px;height:26px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card ul{margin:0;padding-left:1.1em}
+.card li{margin-bottom:.35em}
+
+/* contact + footer */
+.contact{text-align:center}
+.contact p{margin-left:auto;margin-right:auto}
+footer{background:var(--ink);color:#E6EEE8;padding:40px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media (max-width:820px){
+  .hero .wrap,.feature,.places,.trio .grid{grid-template-columns:1fr}
+  .hero .wrap{padding-top:44px;padding-bottom:44px}
+  .art{max-width:320px}
+  section{padding:60px 0}
+  .feature .panel,.feature .body{padding:30px}
+  .bar{padding:10px 0}
+  nav{order:3;width:100%}
+  nav ul{flex-wrap:wrap}
+  .menu{display:none!important}
+  .has-menu>a::after{content:""}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .trace{animation:none;stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Dr. Namita Mishra</a>
+    <nav aria-label="Main">
+      <ul>
+        <li class="has-menu">
+          <a href="#research" aria-haspopup="true">Work</a>
+          <ul class="menu">
+            <li><a href="#research">Research</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="#background">Training and toolkit</a></li>
+          </ul>
+        </li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#contact">Work with me</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Health data,<br>turned into decisions</h1>
+        <p class="tag">I trained as a physician and now work as a health data scientist and educator.</p>
+        <p>My work connects clinical medicine, epidemiology, and predictive modeling, and I teach the next generation of health professionals at the University of West Florida.</p>
+        <div class="actions">
+          <a class="btn" href="#research">See my research</a>
+          <a class="btn ghost" href="#teaching">See my teaching</a>
+        </div>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="disc"></div>
+        <div class="disc2"></div>
+        <svg viewBox="0 0 400 400" fill="none">
+          <path class="trace" d="M20 230 H95 L115 230 L135 150 L160 300 L185 200 L205 230 H245 L290 205 L330 170 L380 110" stroke="#1D2B24" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="380" cy="110" r="11" fill="#9C2250"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="research">
+    <div class="wrap">
+      <h2>Research in progress</h2>
+      <div class="feature">
+        <div class="panel">
+          <strong>8,484</strong>
+          <span>female breast cancer survivors in the cohort I analyze</span>
+        </div>
+        <div class="body">
+          <h3>NIH All of Us Research Program</h3>
+          <p>Since 2026 I have been a researcher and data analyst on this national program, applying regression, clustering, and predictive analytics to understand outcomes among breast cancer survivors.</p>
+          <p class="note">Research interests include chronic disease epidemiology, geospatial epidemiology, public health informatics, health disparities, and food access.</p>
+          <a class="btn" href="#contact">Discuss a collaboration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching" style="padding-top:0">
+    <div class="wrap">
+      <h2>Where I teach and work</h2>
+      <div class="places">
+        <div class="place">
+          <h3>University of West Florida</h3>
+          <p class="meta"><em>Adjunct Instructor, Department of Health Science and Administration, Usha Kundu College of Health</em><br>Pensacola, Florida</p>
+          <p>I have taught here since 2019: Human Physiology, Pharmacology for Health Professionals, anatomy laboratory, and directed study.</p>
+        </div>
+        <div class="place">
+          <h3>Health analytics and research</h3>
+          <p class="meta"><em>Epidemiology, predictive modeling, and geospatial analysis</em><br>Pensacola, Florida</p>
+          <p>Past projects include a Bayesian logistic regression model of diabetes risk using NHANES 2013–2014 data and a community food access study in Escambia County.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trio" id="background">
+    <div class="wrap">
+      <h2>Training and toolkit</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V16c0 1.2 2.2 3 5 3s5-1.8 5-3v-4.5"/></svg></div>
+          <h3>Education</h3>
+          <ul>
+            <li>MS, Data Science (Health Analytics), UWF, 2025</li>
+            <li>MPH, Cum Laude, UWF, 2018</li>
+            <li>DNB, Otorhinolaryngology, India, 2010</li>
+            <li>MBBS, India, 1995</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path d="M14 4l-4 16"/></svg></div>
+          <h3>Toolkit</h3>
+          <ul>
+            <li>R (tidyverse, ggplot2) and Python (pandas, matplotlib)</li>
+            <li>SAS, SQL, SPSS, and EpiInfo</li>
+            <li>Power BI, ArcGIS, and QGIS</li>
+            <li>Bayesian modeling and MCMC</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9-9a5 5 0 019-3 5 5 0 019 3c-2 4.6-9 9-9 9z"/></svg></div>
+          <h3>Clinical roots</h3>
+          <p>I practiced as an ENT physician and led a primary health center with a team of six, which shapes how I frame data questions around real patients and communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Let's talk</h2>
+      <p>I welcome conversations about health data projects, research collaboration, and STEM teaching in the health sciences.</p>
+      <!-- Replace the address below with your own email -->
+      <a class="btn" href="mailto:your-email@example.com">Email me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span>&copy; 2026 Dr. Namita Mishra</span>
+  </div>
+</footer>
+
+</body>
+</html>
